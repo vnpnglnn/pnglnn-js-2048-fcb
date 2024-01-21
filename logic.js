@@ -480,23 +480,44 @@ document.addEventListener('touchend', (e) => {
     let diffY = startY - e.changedTouches[0].clientY;
 
     // Check if the horizontal swipe is greater in magnitude than the vertical swipe
-    if (Math.abs(diffX) > Math.abs(diffY)) {
+    if (Math.abs(diffX) > Math.abs(diffY)) 
+    {
         // Horizontal swipe
-        if (diffX > 0) {
-            slideLeft(); // Call a function for sliding left
-            setTwo(); // Call a function named "setTwo"
-        } else {
-            slideRight(); // Call a function for sliding right
-            setTwo(); // Call a function named "setTwo"
+        if (diffX > 0 )
+        {
+        	if (canMoveLeft())
+        	{
+        		slideLeft(); // Call a function for sliding left
+        		setTwo(); // Call a function named "setTwo"
+        	}            
+        } 
+        else 
+        {
+        	if (canMoveRight())
+        	{
+        		slideRight(); // Call a function for sliding right
+        		setTwo(); // Call a function named "setTwo"
+        	}
         }
-    } else {
+    } 
+    else 
+    {
         // Vertical swipe
-        if (diffY > 0) {
-            slideUp(); // Call a function for sliding up
-            setTwo(); // Call a function named "setTwo"
-        } else {
-            slideDown(); // Call a function for sliding down
-            setTwo(); // Call a function named "setTwo"
+        if (diffY > 0 ) 
+        {
+        	if (canMoveUp())
+        	{
+        		slideUp(); // Call a function for sliding up
+        		setTwo(); // Call a function named "setTwo"
+        	}            
+        } 
+        else 
+        {
+        	if (canMoveDown())
+        	{
+        		slideDown(); // Call a function for sliding down
+        		setTwo(); // Call a function named "setTwo"
+        	}            
         }
     }
 
